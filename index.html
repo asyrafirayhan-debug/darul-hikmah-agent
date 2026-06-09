@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darul Hikmah Library - AI Agent Maktabah Syamilah</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #1a5f7a;
+            margin-bottom: 5px;
+        }
+        p.subtitle {
+            color: #5c7cfa;
+            margin-top: 0;
+            font-weight: 600;
+        }
+        .search-box {
+            display: flex;
+            margin-top: 25px;
+            gap: 10px;
+        }
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+        input:focus {
+            border-color: #1a5f7a;
+        }
+        button {
+            background: #1a5f7a;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #124559;
+        }
+        .result-area {
+            margin-top: 25px;
+            text-align: right;
+            direction: rtl;
+            font-size: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Darul Hikmah Library</h1>
+    <p class="subtitle">AI Agent Maktabah Syamilah</p>
+    
+    <div class="search-box">
+        <input type="text" id="keyword" placeholder="Ketik kata kunci hadits atau teks Arab...">
+        <button onclick="cariHadits()">Cari</button>
+    </div>
+    
+    <div id="output" class="result-area"></div>
+</div>
+
+<script>
+    async function cariHadits() {
+    const keyword = document.getElementById('keyword').value;
+    const outputDiv = document.getElementById('output');
+    if(!keyword) return alert('Ketik kata kunci terlebih dahulu!');
+    
+    outputDiv.style.direction = "ltr";
+    outputDiv.style.textAlign = "left";
+    outputDiv.style.fontSize = "16px";
+    outputDiv.innerHTML = "⏳ Sedang menerawang database Maktabah Syamilah via Gemini AI...";
+    
+    try {
+        const response = await fetch('/cari', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pesan: keyword })
+        });
+        const data = await response.json();
+        
+        // Menampilkan teks hasil jawaban Gemini secara rapi
+        outputDiv.innerHTML = data.hasil.replace(/\n/g, "<br>");
+    } catch (err) {
+        outputDiv.innerHTML = "❌ Terjadi kesalahan jaringan.";
+    }
+}
+</script>
+
+</body>
+</html>
