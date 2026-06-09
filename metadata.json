@@ -1,0 +1,8 @@
+{
+  "name": "Darul Hikmah Library",
+  "description": "Premium library management system for Al-Misbah Education, featuring Apple-inspired design and interactive book management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
