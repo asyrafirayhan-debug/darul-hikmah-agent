@@ -1,0 +1,14 @@
+{
+  "name": "nama-project",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    ...
+  },
+  "devDependencies": {
+    ...
+  }
+}
