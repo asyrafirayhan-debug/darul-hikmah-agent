@@ -770,18 +770,18 @@ function AiEngineView({
           </button>
 
           {/* Blue Circular Custom Logo button linked to Catalog tab */}
-          <button
-            type="button"
-            onClick={() => setActiveTab("catalog")}
-            title="Hubungkan Pustaka"
-            className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center shadow-md shadow-blue-500/25 duration-300 hover:scale-105 active:scale-95"
-          >
-            <img
-              src="/src/assets/images/regenerated_image_1779182020555.png"
-              alt="Logo"
-              className="w-5 h-5 rounded-full object-contain invert brightness-200"
-            />
-          </button>
+<button
+  type="button"
+  onClick={() => setActiveTab("catalog")}
+  title="Hubungkan Pustaka"
+  className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center shadow-md shadow-blue-500/25 duration-300 hover:scale-105 active:scale-95"
+>
+  <img
+    src="/logo.jpg"
+    alt="Logo Darul Hikmah"
+    className="w-5 h-5 rounded-full object-contain invert brightness-200"
+  />
+</button>
         </div>
       </div>
 
