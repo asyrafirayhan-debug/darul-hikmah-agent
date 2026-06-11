@@ -680,14 +680,18 @@ function AiEngineView({
         {/* Top items */}
         <div className="flex flex-col items-center gap-6 w-full">
           {/* Home Icon */}
-          <button
-            type="button"
-            onClick={() => setActiveTab("catalog")}
-            title="Utama (Pustaka)"
-            className="w-10 h-10 rounded-xl hover:bg-zinc-100 text-zinc-500 hover:text-black flex items-center justify-center transition-all cursor-pointer active:scale-95"
-          >
-            <Home size={18} />
-          </button>
+         <button
+  type="button"
+  onClick={() => setActiveTab("catalog")}
+  title="Utama (Pustaka)"
+  className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center shadow-md shadow-blue-500/30 transition-all cursor-pointer active:scale-95"
+>
+  <img 
+    src="/logo.jpg" 
+    alt="Logo Darul Hikmah" 
+    className="w-6 h-6 rounded-full object-contain" 
+  />
+</button>
 
           {/* Plus inside circle / Plus Icon */}
           <button
