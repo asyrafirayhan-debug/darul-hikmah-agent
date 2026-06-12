@@ -50,6 +50,18 @@ import {
   Settings,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+// Image Imports - Required for Vite production build
+import imgLogo       from './assets/images/regenerated_image_1779182020555.png';
+import imgBook1Cover from './assets/images/regenerated_image_1780745517708.jpg';
+import imgBook2Cover from './assets/images/regenerated_image_1779181770796.jpg';
+import imgBook3Cover from './assets/images/regenerated_image_1779181774179.jpg';
+import imgBook4Cover from './assets/images/regenerated_image_1779181751763.png';
+import imgPartner1   from './assets/images/regenerated_image_1779181971498.png';
+import imgPartner2   from './assets/images/regenerated_image_1779181984283.png';
+import imgPartner3   from './assets/images/regenerated_image_1779181989432.png';
+import imgGallery1   from './assets/images/regenerated_image_1779181754635.png';
+import imgMosque     from './assets/images/mosque_footer_1780417308341.png';
+
 
 // --- Types ---
 interface Book {
@@ -110,7 +122,7 @@ const DEFAULT_BOOKS: Book[] = [
     category: "Research",
     description:
       "A comprehensive study on Islamic analysis in the modern technological world.",
-    coverImage: "/src/assets/images/regenerated_image_1780745517708.jpg",
+    coverImage: imgBook1Cover,
     fileName: "islamic_studies_v1.pdf",
     createdAt: Date.now() - 86400000 * 2,
   },
@@ -121,7 +133,7 @@ const DEFAULT_BOOKS: Book[] = [
     category: "Magazine",
     description:
       "Community news, spiritual insights, and artistic expressions.",
-    coverImage: "/src/assets/images/regenerated_image_1779181770796.jpg",
+    coverImage: imgBook2Cover,
     fileName: "magazine_may_2026.pdf",
     createdAt: Date.now() - 86400000,
   },
@@ -132,7 +144,7 @@ const DEFAULT_BOOKS: Book[] = [
     category: "Innovation",
     description:
       "Exploring new methods in faith-based education through digital tools.",
-    coverImage: "/src/assets/images/regenerated_image_1779181774179.jpg",
+    coverImage: imgBook3Cover,
     fileName: "edutech_report.pdf",
     createdAt: Date.now(),
   },
@@ -143,7 +155,7 @@ const DEFAULT_BOOKS: Book[] = [
     category: "General",
     description:
       "Panduan integratif penyelamatan naskah klasik (turats) Islam melalui kecerdasan buatan dan preservasi digital.",
-    coverImage: "/src/assets/images/regenerated_image_1779181751763.png",
+    coverImage: imgBook4Cover,
     fileName: "heritage_preservation.pdf",
     createdAt: Date.now() - 86400000 * 3,
   },
@@ -157,7 +169,7 @@ const DEFAULT_ACTIVITIES: Activity[] = [
     category: "Kunjungan",
     description:
       "Diskusi panel interaktif mengenai studi riset Islam modern, tata kelola literasi, dan pengembangan peradaban digital berwawasan sains santri.",
-    imageUrl: "/src/assets/images/regenerated_image_1779181774179.jpg",
+    imageUrl: imgBook3Cover,
   },
   {
     id: "act-2",
@@ -166,7 +178,7 @@ const DEFAULT_ACTIVITIES: Activity[] = [
     category: "Publikasi",
     description:
       "Peluncuran silsilah berkala riset ilmiah meneliti tinjauan hukum kedaulatan data digital umat Islam di era integrasi AI global.",
-    imageUrl: "/src/assets/images/regenerated_image_1779181754635.png",
+    imageUrl: imgGallery1,
   },
   {
     id: "act-3",
@@ -175,7 +187,7 @@ const DEFAULT_ACTIVITIES: Activity[] = [
     category: "Akademik",
     description:
       "Bimbingan intensif bagi santri dalam pemanfaatan alat sirkulasi riset literatur digital di Darul Hikmah Library.",
-    imageUrl: "/src/assets/images/regenerated_image_1779181770796.jpg",
+    imageUrl: imgBook2Cover,
   },
   {
     id: "act-4",
@@ -184,7 +196,7 @@ const DEFAULT_ACTIVITIES: Activity[] = [
     category: "Kajian",
     description:
       "Sesi kupas tuntas landasan keilmuan teknologi modern berasaskan ayat Al-Quran bersama para mufassir senior.",
-    imageUrl: "/src/assets/images/regenerated_image_1779181774179.jpg",
+    imageUrl: imgBook3Cover,
   },
 ];
 
@@ -680,18 +692,14 @@ function AiEngineView({
         {/* Top items */}
         <div className="flex flex-col items-center gap-6 w-full">
           {/* Home Icon */}
-         <button
-  type="button"
-  onClick={() => setActiveTab("catalog")}
-  title="Utama (Pustaka)"
-  className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center shadow-md shadow-blue-500/30 transition-all cursor-pointer active:scale-95"
->
-  <img 
-    src="/logo.jpg" 
-    alt="Logo Darul Hikmah" 
-    className="w-6 h-6 rounded-full object-contain" 
-  />
-</button>
+          <button
+            type="button"
+            onClick={() => setActiveTab("catalog")}
+            title="Utama (Pustaka)"
+            className="w-10 h-10 rounded-xl hover:bg-zinc-100 text-zinc-500 hover:text-black flex items-center justify-center transition-all cursor-pointer active:scale-95"
+          >
+            <Home size={18} />
+          </button>
 
           {/* Plus inside circle / Plus Icon */}
           <button
@@ -773,19 +781,19 @@ function AiEngineView({
             <Settings size={18} />
           </button>
 
-    {/* Blue Circular Custom Logo button linked to Catalog tab */}
-<button
-  type="button"
-  onClick={() => setActiveTab("catalog")}
-  title="Hubungkan Pustaka"
-  className="w-11 h-11 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center shadow-md shadow-blue-500/40 transition-all cursor-pointer active:scale-95"
->
-  <img
-    src="/logo.jpg"
-    alt="Logo Darul Hikmah"
-    className="w-7 h-7 rounded-full object-contain"
-  />
-</button>
+          {/* Blue Circular Custom Logo button linked to Catalog tab */}
+          <button
+            type="button"
+            onClick={() => setActiveTab("catalog")}
+            title="Hubungkan Pustaka"
+            className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center shadow-md shadow-blue-500/25 duration-300 hover:scale-105 active:scale-95"
+          >
+            <img
+              src={imgLogo}
+              alt="Logo"
+              className="w-5 h-5 rounded-full object-contain invert brightness-200"
+            />
+          </button>
         </div>
       </div>
 
@@ -813,7 +821,7 @@ function AiEngineView({
             <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "24px" }}>
               <div className="w-11 h-11 rounded-full border border-zinc-200 p-0.5 bg-white flex items-center justify-center shadow-sm">
                 <img
-                  src="/src/assets/images/regenerated_image_1779182020555.png"
+                  src={imgLogo}
                   alt="Al-Misbah Logo"
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
@@ -936,7 +944,7 @@ function AiEngineView({
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full border border-zinc-250 p-0.5 overflow-hidden flex items-center justify-center bg-white shadow-sm">
                   <img
-                    src="/src/assets/images/regenerated_image_1779182020555.png"
+                    src={imgLogo}
                     alt="Mini Logo"
                     className="w-[85%] h-[85%] object-contain"
                   />
@@ -1809,22 +1817,22 @@ const DEFAULT_GALLERY: GalleryItem[] = [
   {
     id: "gal-1",
     title: "Ruang Baca Barat Darul Hikmah",
-    imageUrl: "/src/assets/images/regenerated_image_1779181754635.png",
+    imageUrl: imgGallery1,
   },
   {
     id: "gal-2",
     title: "Sesi Diskusi Dewan Pakar Riset",
-    imageUrl: "/src/assets/images/regenerated_image_1779181770796.jpg",
+    imageUrl: imgBook2Cover,
   },
   {
     id: "gal-3",
     title: "Pustaka Kitab Turats Klasik",
-    imageUrl: "/src/assets/images/regenerated_image_1779181774179.jpg",
+    imageUrl: imgBook3Cover,
   },
   {
     id: "gal-4",
     title: "Koleksi Digital Room & Lab",
-    imageUrl: "/src/assets/images/regenerated_image_1779181754635.png",
+    imageUrl: imgGallery1,
   },
 ];
 
@@ -2906,7 +2914,7 @@ export default function App() {
               boxShadow: "0 0 15px rgba(229, 193, 88, 0.15)"
             }} className="shrink-0">
               <img
-                src="/src/assets/images/regenerated_image_1779182020555.png"
+                src={imgLogo}
                 alt="Al-Misbah Logo"
                 style={{ width: "100%", height: "100%", objectFit: "contain" }}
                 onError={(e) =>
@@ -3000,7 +3008,7 @@ export default function App() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "10px" }} className="shrink-0 p-1 bg-transparent">
             <div style={{ width: "44px", height: "44px" }} className="flex items-center justify-center">
               <img
-                src="/src/assets/images/regenerated_image_1779181971498.png"
+                src={imgPartner1}
                 alt="Tazakka"
                 className="w-full h-full object-contain hover:scale-105 duration-300"
                 onError={(e) =>
@@ -3011,7 +3019,7 @@ export default function App() {
             </div>
             <div style={{ width: "44px", height: "44px" }} className="flex items-center justify-center">
               <img
-                src="/src/assets/images/regenerated_image_1779181984283.png"
+                src={imgPartner2}
                 alt="Mandala"
                 className="w-full h-full object-contain hover:scale-105 duration-300"
                 onError={(e) =>
@@ -3022,7 +3030,7 @@ export default function App() {
             </div>
             <div style={{ width: "44px", height: "44px" }} className="flex items-center justify-center">
               <img
-                src="/src/assets/images/regenerated_image_1779181989432.png"
+                src={imgPartner3}
                 alt="Al Fath"
                 className="w-full h-full object-contain hover:scale-105 duration-300"
                 onError={(e) =>
@@ -3033,7 +3041,7 @@ export default function App() {
             </div>
             <div style={{ width: "44px", height: "44px" }} className="flex items-center justify-center">
               <img
-                src="/src/assets/images/regenerated_image_1779182020555.png"
+                src={imgLogo}
                 alt="DH Library"
                 className="w-full h-full object-contain hover:scale-105 duration-300"
                 onError={(e) =>
@@ -3066,7 +3074,7 @@ export default function App() {
                 boxSizing: "border-box"
               }}>
                 <img
-                  src="/src/assets/images/regenerated_image_1779182020555.png"
+                  src={imgLogo}
                   alt="Al-Misbah Icon"
                   style={{ width: "100%", height: "100%", objectFit: "contain" }}
                 />
@@ -3433,7 +3441,7 @@ export default function App() {
                     <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-200 dark:border-zinc-850 bg-[#E5E5EA]/60 dark:bg-zinc-900/40 relative z-10">
                       <div className="flex items-center gap-2.5">
                         <img
-                          src="/src/assets/images/regenerated_image_1779182020555.png"
+                          src={imgLogo}
                           alt="Logo"
                           className="w-5 h-5 rounded-full object-contain shrink-0 border border-zinc-200/40 dark:border-zinc-800 shadow-sm"
                         />
@@ -3475,7 +3483,7 @@ export default function App() {
                               className="w-10 h-10 rounded-full flex items-center justify-center relative z-10"
                             >
                               <img
-                                src="/src/assets/images/regenerated_image_1779182020555.png"
+                                src={imgLogo}
                                 alt="Logo"
                                 className="w-8 h-8 rounded-full object-contain shadow-md border border-zinc-200/80 dark:border-zinc-800"
                               />
@@ -6175,7 +6183,7 @@ export default function App() {
               {/* Majestic Symmetrical Mosque with Blue Domes and photorealistic styling */}
               <div className="w-full max-w-2xl h-80 sm:h-96 md:h-[400px] transition-transform hover:scale-[1.03] duration-500 drop-shadow-2xl">
                 <img
-                  src="/src/assets/images/mosque_footer_1780417308341.png"
+                  src={imgMosque}
                   alt="Majestic Symmetrical Mosque Al-Misbah"
                   className="w-full h-full object-contain filter drop-shadow-[0_16px_50px_rgba(59,130,246,0.35)]"
                   referrerPolicy="no-referrer"
@@ -6192,7 +6200,7 @@ export default function App() {
                   <div className="flex items-center gap-3">
                     <div className="w-11 h-11 bg-zinc-950 border border-zinc-800 rounded-full flex items-center justify-center p-0.5 overflow-hidden shadow-lg">
                       <img
-                        src="/src/assets/images/regenerated_image_1779182020555.png"
+                        src={imgLogo}
                         alt="Mini Logo"
                         className="w-full h-full object-contain"
                       />
